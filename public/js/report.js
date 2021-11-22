@@ -100,12 +100,6 @@ function makeFinalTable() {
         tr.appendChild(th)
         tr.appendChild(td)
     }
-    // console.log(divPreviewTable.innerHTML + "");
-    // console.log("`````````````````````````````");
-    // console.log(divPreviewTable.innerHTML);
-    // console.log(typeof divPreviewTable)
-    // console.log(divPreviewTable.scrollHeight)
-    // console.log(divPreviewTable.scrollWidth)
 }
 
 //create pdf  
@@ -119,9 +113,7 @@ function generatePDF() {
             format: 'a4'
         });
         doc.addImage(img, 'JPEG', 20, 20);
-        // doc.mailDoc(true, "akunagpal99@gmail.com", "", "", "hbdsj");
         doc.save('report.pdf');
-        // await email(options)
     });
 }
 
@@ -146,7 +138,6 @@ sendpdfbutton.addEventListener("click", function(){
     let email = inputEmail.value;
     try {
         if (email && divPreviewTable) {
-            // send Email is defined in frontend.js  
             sendEmail(divPreviewTable.innerHTML + "", email ) ;
         }
     } catch (err) {

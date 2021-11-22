@@ -22,11 +22,8 @@ diagnosisrecognition.continuous = true;
 diagnosisrecognition.onresult = function (event) {
     let currentdiagnosis = event.resultIndex;
     let transcriptdiagnosis = event.results[currentdiagnosis][0].transcript;
-    // var mobileRepeatBug = (currentdiagnosis == 1 && transcriptdiagnosis == event.results[0][0].transcript);
-    // if (!mobileRepeatBug) {
     diagnosiscontent += transcriptdiagnosis;
     diagnosistextarea.textContent = diagnosiscontent;
-    // }
 }
 diagnosisrecognition.onstart = function () {
     diagnosisinstructions.innerHTML = "Voice recognition activated. Try speaking into the microphone.";
@@ -82,18 +79,13 @@ diagnosisnotes.addEventListener("click", function (event) {
     let idx = arr[0]
     let guide = arr[1]
     if (guide == "listen-note") {
-        // console.log(diagnosiscurrenttarget.children)
         let diagnosisread = diagnosiscurrenttarget.children[idx].childNodes[3].textContent;
-        // console.log(diagnosisread)
         readOutLouddiagnosis(diagnosisread)
     }
     else if (guide == "delete-note") {
         let diagnosisdelete = diagnosiscurrenttarget.children[idx].childNodes[3].textContent;
         deletediagnosis(diagnosisdelete);
-
-
     }
-
 })
 
 //Speech Synthesis

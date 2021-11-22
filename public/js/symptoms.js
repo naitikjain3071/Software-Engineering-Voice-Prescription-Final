@@ -22,11 +22,8 @@ symptomsrecognition.continuous = true;
 symptomsrecognition.onresult = function (event) {
     let currentsymptoms = event.resultIndex;
     let transcriptsymptoms = event.results[currentsymptoms][0].transcript;
-    // var mobileRepeatBug = (currentsymptoms == 1 && transcriptsymptoms == event.results[0][0].transcript);
-    // if (!mobileRepeatBug) {
     symptomscontent += transcriptsymptoms;
     symptomstextarea.textContent = symptomscontent;
-    // }
 }
 symptomsrecognition.onstart = function () {
     symptomsinstructions.innerHTML = "Voice recognition activated. Try speaking into the microphone.";
@@ -82,9 +79,7 @@ symptomsnotes.addEventListener("click", function (event) {
     let idx = arr[0]
     let guide = arr[1]
     if (guide == "listen-note") {
-        // console.log(symptomscurrenttarget.children)
         let symptomsread = symptomscurrenttarget.children[idx].childNodes[3].textContent;
-        // console.log(symptomsread)
         readOutLoudsymptoms(symptomsread)
     }
     else if (guide == "delete-note") {

@@ -22,11 +22,8 @@ prescriptionrecognition.continuous = true;
 prescriptionrecognition.onresult = function (event) {
     let currentprescription = event.resultIndex;
     let transcriptprescription = event.results[currentprescription][0].transcript;
-    // var mobileRepeatBug = (currentprescription == 1 && transcriptprescription == event.results[0][0].transcript);
-    // if (!mobileRepeatBug) {
     prescriptioncontent += transcriptprescription;
     prescriptiontextarea.textContent = prescriptioncontent;
-    // }
 }
 prescriptionrecognition.onstart = function () {
     prescriptioninstructions.innerHTML = "Voice recognition activated. Try speaking into the microphone.";
@@ -82,9 +79,7 @@ prescriptionnotes.addEventListener("click", function (event) {
     let idx = arr[0]
     let guide = arr[1]
     if (guide == "listen-note") {
-        // console.log(prescriptioncurrenttarget.children)
         let prescriptionread = prescriptioncurrenttarget.children[idx].childNodes[3].textContent;
-        // console.log(prescriptionread)
         readOutLoudprescription(prescriptionread)
     }
     else if (guide == "delete-note") {

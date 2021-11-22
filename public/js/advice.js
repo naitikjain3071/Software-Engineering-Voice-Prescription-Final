@@ -22,11 +22,8 @@ advicerecognition.continuous = true;
 advicerecognition.onresult = function (event) {
     let currentadvice = event.resultIndex;
     let transcriptadvice = event.results[currentadvice][0].transcript;
-    // var mobileRepeatBug = (currentadvice == 1 && transcriptadvice == event.results[0][0].transcript);
-    // if (!mobileRepeatBug) {
     advicecontent += transcriptadvice;
     advicetextarea.textContent = advicecontent;
-    // }
 }
 advicerecognition.onstart = function () {
     adviceinstructions.innerHTML = "Voice recognition activated. Try speaking into the microphone.";
@@ -82,9 +79,7 @@ advicenotes.addEventListener("click", function (event) {
     let idx = arr[0]
     let guide = arr[1]
     if (guide == "listen-note") {
-        // console.log(advicecurrenttarget.children)
         let adviceread = advicecurrenttarget.children[idx].childNodes[3].textContent;
-        // console.log(adviceread)
         readOutLoudadvice(adviceread)
     }
     else if (guide == "delete-note") {

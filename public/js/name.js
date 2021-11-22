@@ -79,16 +79,13 @@ namenotes.addEventListener("click", function (event) {
     let idx = arr[0]
     let guide = arr[1]
     if (guide == "listen-note") {
-        // console.log(namecurrenttarget.children)
         let nameread = namecurrenttarget.children[idx].childNodes[3].textContent;
-        // console.log(nameread)
         readOutLoudname(nameread)
     }
     else if (guide == "delete-note") {
         let namedelete = namecurrenttarget.children[idx].childNodes[3].textContent;
         deletename(namedelete);
     }
-
 })
 
 //Speech Synthesis
