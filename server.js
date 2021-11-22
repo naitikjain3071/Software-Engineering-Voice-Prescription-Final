@@ -49,6 +49,7 @@ var index = require('./routes/index');
 app.use('/', index);
 
 app.post("/email", async function(req, res) {
+  console.log("helloo");
   try {
     if (req.body) {
       await emailer(req.body);

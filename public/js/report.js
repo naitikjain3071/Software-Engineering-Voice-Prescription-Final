@@ -138,6 +138,7 @@ sendpdfbutton.addEventListener("click", function(){
     let email = inputEmail.value;
     try {
         if (email && divPreviewTable) {
+            console.log("pppp123");
             sendEmail(divPreviewTable.innerHTML + "", email ) ;
         }
     } catch (err) {
