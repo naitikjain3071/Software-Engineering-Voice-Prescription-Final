@@ -120,6 +120,10 @@ class AuthController{
 			}
 		});
 	}
+	instructions(req, res, next){
+		console.log("pp");
+		res.render("instructions.ejs")
+	}
 }
 
 const AuthCtrl = new AuthController();
@@ -141,5 +145,7 @@ router.get('/logout', AuthCtrl.logout);
 router.get('/forgetpass', AuthCtrl.forgetPassGet);
 
 router.post('/forgetpass', AuthCtrl.forgetPassPost);
+
+router.get('/instructions', AuthCtrl.instructions)
 
 module.exports = router;

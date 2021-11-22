@@ -13,6 +13,9 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/shoelace-css/1.0.0-beta16/shoelace.css"
     />
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Paprika' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet'>
     <link rel="stylesheet" href="styles.css" />
     <link
       rel="stylesheet"
@@ -107,6 +110,10 @@
 		  border-radius: 100px;
         }
       }
+      #start-record-btn-name:hover,#pause-record-btn-name:hover,#save-note-btn-name:hover{
+        color:black;
+        background-color:#006600;
+      }
 
       .final {
         display: none;
@@ -117,73 +124,110 @@
       }
     </style>
   </head>
-  <body>
+  <body style="background-image: url('https://wallpapercave.com/wp/wp3434343.jpg');
+  background-repeat: no-repeat;background-size: cover;">
+   <nav class="navbar navbar-expand-sm   navbar-light bg-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="#" style="font-size: 25px; color:#008000; font-family: 'Ubuntu'; padding-right: 30px;">Home<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/instructions" style="font-size: 25px; color:#008000; font-family: 'Ubuntu'; padding-right: 30px;">Instructions<span class="sr-only">(current)</span></a>
+        </li>
+       <!-- <li class="nav-item dropdown dmenu">
+        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+          Dropdown link
+        </a>
+        <div class="dropdown-menu sm-menu">
+          <a class="dropdown-item" href="#">Link 1</a>
+          <a class="dropdown-item" href="#">Link 2</a>
+          <a class="dropdown-item" href="#">Link 3</a>
+          <a class="dropdown-item" href="#">Link 4</a>
+          <a class="dropdown-item" href="#">Link 5</a>
+          <a class="dropdown-item" href="#">Link 6</a>
+        </div>
+      </li> -->
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="nav-item">
+          <a class="nav-link" href="/logout" style="font-size: 25px; color:#008000; font-family: 'Ubuntu'; padding-right: 30px;">LogOut<span class="sr-only">(current)</span></a>
+        </li>
+        </ul>
+      <div class="social-part">
+        <i class="fa fa-facebook" aria-hidden="true"></i>
+        <i class="fa fa-twitter" aria-hidden="true"></i>
+        <i class="fa fa-instagram" aria-hidden="true"></i>
+      </div>
+    </div>
+  </nav>
       <div class="container">
-		  <div>
-			<a type="button" class="abc btn btn-outline-info" href="/logout" style="height: 35px; margin-left: 900px; margin-top: 50px; width: 150px; font-size: 15px;">
-				Logout
-			</a>
-		  </div>
-		
-        <h3 class="no-browser-support">
-          Sorry, Your Browser Doesn't Support the Web Speech API. Try Opening This Demo In Google Chrome.
-        </h3>
-        <header></header>
-        <div class="app">
-          <h3 style="font-size: 25px; margin-bottom: 23px;">Input Prescription</h3>
-          <form style="margin-bottom: 30px;">
-            <div class="form-group row">
-              <label for="user-email" class="col-4" style="font-size: 17px;">Enter the email address of patient</label>
-              <input
-                type="email"
-                class="form-control input-email col-6"
-                id="user-email"
-                placeholder="" 
-				style="font-size: 15px; height: 30px; width: 25px;"
-              />
-            </div>
-          </form>
-		  
-          <table class="table">
-            <thead class="thead-dark">
-              <tr>
-                <th scope="col" style="text-align: center; font-size: x-large;"></th>
-                <th scope="col" style="text-align: center; font-size: x-large;">Input Data</th>
-              </tr>
-            </thead>
-			
-            <tbody>
-				
-              <tr>
-				
-                <th scope="row" style="font-size: large;">Name</th>
-                <td>
-                  <div class="input-name">
-                    <textarea
-                      id="name-textarea"
-                      input=""
-                      placeholder="Enter a new name by typing or using voice recognition."
-                      rows="2"
-					  style="font-size: 15px; height: 70px;"
-                    ></textarea>
-                  </div>
-				  <br>
-                  <button
-                    type="button"
-                    class="btn btn-outline-info"
-                    button
-                    id="start-record-btn-name"
-                    title="Start Recording"
-					style="height: 35px; width: 150px; margin-right: 60px; font-size: 15px;"
-					>
-                    Start Recognition
+
+      <h3 class="no-browser-support">
+        Sorry, Your Browser Doesn't Support the Web Speech API. Try Opening This Demo In Google Chrome.
+      </h3>
+      <header></header>
+      <div class="app">
+        <h3 style="margin-bottom: 23px; font-weight:900; color:#003300; font-family: 'Montserrat';font-size: 45px;;">Hi Doctor, lets get started with your prescription!</h3>
+        <br>
+        <br>
+        <br>
+        <!-- <form style="margin-bottom: 30px;">
+          <div class="form-group row"> -->
+            <!-- <label for="user-email" class="col-4" style="font-size: 17px;">Enter the email address of patient</label> -->
+            <!-- <input
+              type="email"
+              class="form-control input-email col-6"
+              id="user-email"
+              placeholder="Enter the email address of patient" 
+      style="font-size: 15px; height: 30px; width: 25px;"
+            />
+          </div>
+        </form> -->
+    
+        <!-- <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col" style="text-align: center; font-size: x-large;"></th>
+              <th scope="col" style="text-align: center; font-size: x-large;">Input Data</th>
+            </tr>
+          </thead> -->
+    
+          <tbody>
+      
+            <tr>
+             <p style="font-size: large; text-align: left; font-size: 25px; padding-left: 60px; color:#006600; font-weight:700; font-family: 'Paprika';">Name</p>
+              <!-- <th scope="row" style="font-size: large; text-align: left; font-size: 50px;">Name</th> -->
+              <td>
+                <div class="input-name">
+                  <input
+                    id="name-textarea"
+                    input=""
+                    placeholder=" Enter a new name by typing or using voice recognition."
+                    rows="2"
+          style="font-size: 22px; height: 60px; width:1000px; border-radius: 10px; border-color: #006600; text-align: left;"
+                  ></input>
+                </div>
+        <br>
+                <button
+                  type="button"
+                  class="btn btn-outline-info"
+                  id="start-record-btn-name"
+                  title="Start Recording"
+        style="height: 35px; width: 150px; margin-right: 60px; font-size: 15px; border-radius: 10px; color:black; border-color: #006600;"
+        >
+                  Start Recognition
                   </button>
                   <button
                     type="button"
                     class="btn btn-outline-info"
                     id="pause-record-btn-name"
                     title="Pause Recording"
-					style="height: 35px; width: 150px; margin-right: 60px; font-size: 15px;"
+					style="height: 35px; width: 150px; margin-right: 60px; font-size: 15px; border-radius: 10px; color:black; border-color: #006600;"
                   >
                     Pause Recognition
                   </button>
@@ -193,221 +237,243 @@
                     class="btn btn-outline-info"
                     id="save-note-btn-name"
                     title="Save Note"
-					style="height: 35px; width: 150px; margin-right: 60px; font-size: 15px;"
+					style="height: 35px; width: 150px; margin-right: 60px; font-size: 15px; border-radius: 10px; color:black; border-color: #006600;"
                   >
                     Save Name
                   </button>
                   <ul id="notes-name">
                     <li>
-                      <p class="no-notes" style="font-size: 20px; margin-top: 15px;">You don't have any notes.</p>
+                      <!-- <p class="no-notes" style="font-size: 20px; margin-top: 15px;">You don't have any notes.</p> -->
                     </li>
                   </ul>
-                  <p id="recording-instructions-name" style="font-size: 20px; margin-top: 15px;">
+                  <!-- <p id="recording-instructions-name" style="font-size: 20px; margin-top: 15px;">
                     Press the Start Recognition button and
                     allow access.
-                  </p>
+                  </p> -->
                 </td>
               </tr>
+              <br>
+              <br>
               <tr>
-                <th scope="row" style="font-size: large;">Symptoms</th>
-                <td>
-                  <div class="input-symptoms">
-                    <textarea
-                      id="symptoms-textarea"
-                      placeholder="Enter symptoms by typing or using voice recognition."
-                      rows="2"
-					  style="font-size: 15px; height: 70px;"
-                    ></textarea>
-                  </div>
-				  <br>
-                  <button
-                    type="button"
-                    class="btn btn-outline-info"
-                    id="start-record-btn-symptoms"
-                    title="Start Recording"
-					style="height: 35px; width: 150px; margin-right: 60px; font-size: 15px;"
-                  >
-                    Start Recognition
-                  </button>
-                  <button
-                    type="button"
-                    class="btn btn-outline-info"
-                    id="pause-record-btn-symptoms"
-                    title="Pause Recording"
-					style="height: 35px; width: 150px; margin-right: 60px; font-size: 15px;"
-                  >
-                    Pause Recognition
-                  </button>
-                  <button
-                    type="button"
-                    class="btn btn-outline-info"
-                    id="save-note-btn-symptoms"
-                    title="Save Note"
-					style="height: 35px; width: 150px; margin-right: 60px; font-size: 15px;"
-                  >
-                    Save Symptoms
-                  </button>
-                  <ul id="notes-symptoms">
-                    <li>
-                      <p class="no-notes" style="font-size: 20px; margin-top: 15px;">You don't have any notes.</p>
-                    </li>
-                  </ul>
-                  <p id="recording-instructions-symptoms" style="font-size: 20px; margin-top: 15px;">
-                    Press the Start Recognition button and
-                    allow access.
-                  </p>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row" style="font-size: large;">Diagnosis</th>
-                <td>
-                  <div class="input-diagnosis">
-                    <textarea
-                      id="diagnosis-textarea"
-                      placeholder="Enter Diagnosis by typing or using voice recognition."
-                      rows="2"
-					  style="font-size: 15px; height: 70px;"
-                    ></textarea>
-                  </div>
-				  <br>
-                  <button
-                    type="button"
-                    class="btn btn-outline-info"
-                    id="start-record-btn-diagnosis"
-                    title="Start Recording"
-					style="height: 35px; width: 150px; margin-right: 60px; font-size: 15px;"
-                  >
-                    Start Recognition
-                  </button>
-                  <button
-                    type="button"
-                    class="btn btn-outline-info"
-                    id="pause-record-btn-diagnosis"
-                    title="Pause Recording"
-					style="height: 35px; width: 150px; margin-right: 60px; font-size: 15px;"
-                  >
-                    Pause Recognition
-                  </button>
-                  <button
-                    type="button"
-                    class="btn btn-outline-info"
-                    id="save-note-btn-diagnosis"
-                    title="Save Note"
-					style="height: 35px; width: 150px; margin-right: 60px; font-size: 15px;"
-                  >
-                    Save Diagnosis
-                  </button>
-                  <ul id="notes-diagnosis">
-                    <li>
-                      <p class="no-notes" style="font-size: 20px; margin-top: 15px;"> You don't have any notes.</p>
-                    </li>
-                  </ul>
-                  <p id="recording-instructions-diagnosis" style="font-size: 20px; margin-top: 15px;"> 
-                    Press the Start Recognition button and
-                    allow access.
-                  </p>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row" style="font-size: large;">Prescription</th>
-                <td>
-                  <div class="input-prescription">
-                    <textarea
-                      id="prescription-textarea"
-                      placeholder="Enter Prescription by typing or using voice recognition."
-                      rows="2"
-					  style="font-size: 15px; height: 70px;"
-                    ></textarea>
-                  </div>
-				  <br>
-                  <button
-                    type="button"
-                    class="btn btn-outline-info"
-                    id="start-record-btn-prescription"
-                    title="Start Recording"
-					style="height: 35px; width: 150px; margin-right: 60px; font-size: 15px;"
-                  >
-                    Start Recognition
-                  </button>
-                  <button
-                    type="button"
-                    class="btn btn-outline-info"
-                    id="pause-record-btn-prescription"
-                    title="Pause Recording"
-					style="height: 35px; width: 150px; margin-right: 60px; font-size: 15px;"
-                  >
-                    Pause Recognition
-                  </button>
-                  <button
-                    type="button"
-                    class="btn btn-outline-info"
-                    id="save-note-btn-prescription"
-                    title="Save Note"
-					style="height: 35px; width: 150px; margin-right: 60px; font-size: 15px;"
-                  >
-                    Save Prescription
-                  </button>
-                  <ul id="notes-prescription">
-                    <li>
-                      <p class="no-notes" style="font-size: 20px; margin-top: 15px;">You don't have any notes.</p>
-                    </li>
-                  </ul>
-                  <p id="recording-instructions-prescription" style="font-size: 20px; margin-top: 15px;">
-                    Press the Start Recognition button and
-                    allow access.
-                  </p>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row" style="font-size: large;">Advice</th>
-                <td>
-                  <div class="input-advice">
-                    <textarea
-                      id="advice-textarea"
-                      placeholder="Enter Advice by typing or using voice recognition."
-                      rows="2"
-					  style="font-size: 15px; height: 70px;"
-                    ></textarea>
-                  </div>
-				  <br>
-                  <button
-                    type="button"
-                    class="btn btn-outline-info"
-                    id="start-record-btn-advice"
-                    title="Start Recording"
-					style="height: 35px; width: 150px; margin-right: 60px; font-size: 15px;"
-                  >
-                    Start Recognition
-                  </button>
-                  <button
-                    type="button"
-                    class="btn btn-outline-info"
-                    id="pause-record-btn-advice"
-                    title="Pause Recording"
-					style="height: 35px; width: 150px; margin-right: 60px; font-size: 15px;"
-                  >
-                    Pause Recognition
-                  </button>
-                  <button
-                    type="button"
-                    class="btn btn-outline-info"
-                    id="save-note-btn-advice"
-                    title="Save Note"
-					style="height: 35px; width: 150px; margin-right: 60px; font-size: 15px;"
-                  >
-                    Save Advice
-                  </button>
-                  <ul id="notes-advice">
-                    <li>
-                      <p class="no-notes" style="font-size: 20px; margin-top: 15px;">You don't have any notes.</p>
-                    </li>
-                  </ul>
-                  <p id="recording-instructions-advice" style="font-size: 20px; margin-top: 15px;">
-                    Press the Start Recognition button and
-                    allow access.
-                  </p>
-                </td>
-              </tr>
+                <p style="font-size: large; text-align: left; font-size: 25px; padding-left: 60px; color:#006600; font-weight:700; font-family: Paprika;">Symptoms</p>
+                 <!-- <th scope="row" style="font-size: large; text-align: left; font-size: 50px;">Name</th> -->
+                 <td>
+                   <div class="input-name">
+                     <input
+                       id="name-textarea"
+                       input=""
+                       placeholder=" Enter symptoms by typing or using voice recognition."
+                       rows="2"
+             style="font-size: 22px; height: 60px; width:1000px; border-radius: 10px; border-color: #006600; text-align: left;"
+                     ></input>
+                   </div>
+           <br>
+                   <button
+                     type="button"
+                     class="btn btn-outline-info"
+                     id="start-record-btn-name"
+                     title="Start Recording"
+           style="height: 35px; width: 150px; margin-right: 60px; font-size: 15px; border-radius: 10px; color:black; border-color: #006600;"
+           >
+                     Start Recognition
+                     </button>
+                     <button
+                       type="button"
+                       class="btn btn-outline-info"
+                       id="pause-record-btn-name"
+                       title="Pause Recording"
+             style="height: 35px; width: 150px; margin-right: 60px; font-size: 15px; border-radius: 10px; color:black; border-color: #006600;"
+                     >
+                       Pause Recognition
+                     </button>
+           
+                     <button
+                       type="button"
+                       class="btn btn-outline-info"
+                       id="save-note-btn-name"
+                       title="Save Note"
+             style="height: 35px; width: 150px; margin-right: 60px; font-size: 15px; border-radius: 10px; color:black; border-color: #006600;"
+                     >
+                       Save Name
+                     </button>
+                     <ul id="notes-name">
+                       <li>
+                         <!-- <p class="no-notes" style="font-size: 20px; margin-top: 15px;">You don't have any notes.</p> -->
+                       </li>
+                     </ul>
+                     <!-- <p id="recording-instructions-name" style="font-size: 20px; margin-top: 15px;">
+                       Press the Start Recognition button and
+                       allow access.
+                     </p> -->
+                   </td>
+                 </tr>
+                 <br>
+                 <br>
+                 <tr>
+                  <p style="font-size: large; text-align: left; font-size: 25px; padding-left: 60px; color:#006600; font-weight:700; font-family: Paprika;">Diagnosis</p>
+                   <!-- <th scope="row" style="font-size: large; text-align: left; font-size: 50px;">Name</th> -->
+                   <td>
+                     <div class="input-name">
+                       <input
+                         id="name-textarea"
+                         input=""
+                         placeholder=" Enter diagnosis by typing or using voice recognition."
+                         rows="2"
+               style="font-size: 22px; height: 60px; width:1000px; border-radius: 10px; border-color: #006600; text-align: left;"
+                       ></input>
+                     </div>
+             <br>
+                     <button
+                       type="button"
+                       class="btn btn-outline-info"
+                       id="start-record-btn-name"
+                       title="Start Recording"
+             style="height: 35px; width: 150px; margin-right: 60px; font-size: 15px; border-radius: 10px; color:black; border-color: #006600;"
+             >
+                       Start Recognition
+                       </button>
+                       <button
+                         type="button"
+                         class="btn btn-outline-info"
+                         id="pause-record-btn-name"
+                         title="Pause Recording"
+               style="height: 35px; width: 150px; margin-right: 60px; font-size: 15px; border-radius: 10px; color:black; border-color: #006600;"
+                       >
+                         Pause Recognition
+                       </button>
+             
+                       <button
+                         type="button"
+                         class="btn btn-outline-info"
+                         id="save-note-btn-name"
+                         title="Save Note"
+               style="height: 35px; width: 150px; margin-right: 60px; font-size: 15px; border-radius: 10px; color:black; border-color: #006600;"
+                       >
+                         Save Name
+                       </button>
+                       <ul id="notes-name">
+                         <li>
+                           <!-- <p class="no-notes" style="font-size: 20px; margin-top: 15px;">You don't have any notes.</p> -->
+                         </li>
+                       </ul>
+                       <!-- <p id="recording-instructions-name" style="font-size: 20px; margin-top: 15px;">
+                         Press the Start Recognition button and
+                         allow access.
+                       </p> -->
+                     </td>
+                   </tr>
+                   <br>
+                   <br>
+                   <tr>
+                    <p style="font-size: large; text-align: left; font-size: 25px; padding-left: 60px; color:#006600; font-weight:700; font-family: Paprika;">Prescription</p>
+                     <!-- <th scope="row" style="font-size: large; text-align: left; font-size: 50px;">Name</th> -->
+                     <td>
+                       <div class="input-name">
+                         <input
+                           id="name-textarea"
+                           input=""
+                           placeholder=" Enter prescription by typing or using voice recognition."
+                           rows="2"
+                 style="font-size: 22px; height: 60px; width:1000px; border-radius: 10px; border-color: #006600; text-align: left;"
+                         ></input>
+                       </div>
+               <br>
+                       <button
+                         type="button"
+                         class="btn btn-outline-info"
+                         id="start-record-btn-name"
+                         title="Start Recording"
+               style="height: 35px; width: 150px; margin-right: 60px; font-size: 15px; border-radius: 10px; color:black; border-color: #006600;"
+               >
+                         Start Recognition
+                         </button>
+                         <button
+                           type="button"
+                           class="btn btn-outline-info"
+                           id="pause-record-btn-name"
+                           title="Pause Recording"
+                 style="height: 35px; width: 150px; margin-right: 60px; font-size: 15px; border-radius: 10px; color:black; border-color: #006600;"
+                         >
+                           Pause Recognition
+                         </button>
+               
+                         <button
+                           type="button"
+                           class="btn btn-outline-info"
+                           id="save-note-btn-name"
+                           title="Save Note"
+                 style="height: 35px; width: 150px; margin-right: 60px; font-size: 15px; border-radius: 10px; color:black; border-color: #006600;"
+                         >
+                           Save Name
+                         </button>
+                         <ul id="notes-name">
+                           <li>
+                             <!-- <p class="no-notes" style="font-size: 20px; margin-top: 15px;">You don't have any notes.</p> -->
+                           </li>
+                         </ul>
+                         <!-- <p id="recording-instructions-name" style="font-size: 20px; margin-top: 15px;">
+                           Press the Start Recognition button and
+                           allow access.
+                         </p> -->
+                       </td>
+                     </tr>
+                     <br>
+                     <br>
+                     <tr>
+                      <p style="font-size: large; text-align: left; font-size: 25px; padding-left: 60px; color:#006600; font-weight:700; font-family: Paprika;">Advice</p>
+                       <!-- <th scope="row" style="font-size: large; text-align: left; font-size: 50px;">Name</th> -->
+                       <td>
+                         <div class="input-name">
+                           <input
+                             id="name-textarea"
+                             input=""
+                             placeholder=" Enter advice typing or using voice recognition."
+                             rows="2"
+                   style="font-size: 22px; height: 60px; width:1000px; border-radius: 10px; border-color: #006600; text-align: left;"
+                           ></input>
+                         </div>
+                 <br>
+                         <button
+                           type="button"
+                           class="btn btn-outline-info"
+                           id="start-record-btn-name"
+                           title="Start Recording"
+                 style="height: 35px; width: 150px; margin-right: 60px; font-size: 15px; border-radius: 10px; color:black; border-color: #006600;"
+                 >
+                           Start Recognition
+                           </button>
+                           <button
+                             type="button"
+                             class="btn btn-outline-info"
+                             id="pause-record-btn-name"
+                             title="Pause Recording"
+                   style="height: 35px; width: 150px; margin-right: 60px; font-size: 15px; border-radius: 10px; color:black; border-color: #006600;"
+                           >
+                             Pause Recognition
+                           </button>
+                 
+                           <button
+                             type="button"
+                             class="btn btn-outline-info"
+                             id="save-note-btn-name"
+                             title="Save Note"
+                   style="height: 35px; width: 150px; margin-right: 60px; font-size: 15px; border-radius: 10px; color:black; border-color: #006600;"
+                           >
+                             Save Name
+                           </button>
+                           <ul id="notes-name">
+                             <li>
+                               <!-- <p class="no-notes" style="font-size: 20px; margin-top: 15px;">You don't have any notes.</p> -->
+                             </li>
+                           </ul>
+                           <!-- <p id="recording-instructions-name" style="font-size: 20px; margin-top: 15px;">
+                             Press the Start Recognition button and
+                             allow access.
+                           </p> -->
+                         </td>
+                       </tr>
+                       <br>
+                       <br>
             </tbody>
           </table>
           <button type="button" class="btn btn-outline-info" id="final-report" style="height: 35px; width: 150px; font-size: 15px;">
