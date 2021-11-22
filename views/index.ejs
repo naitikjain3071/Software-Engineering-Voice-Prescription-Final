@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
 	<title>Registration</title>
@@ -36,9 +36,186 @@
 	</script>
 </head>
 <style >
-	/* html, body {
+body {
+	color: #fff;
+	background: #19aa8d;
+	font-family: 'Roboto', sans-serif;
+}
+.form-control {
+	font-size: 15px;
+}
+.form-control, .form-control:focus, .input-group-text {
+	border-color: #e1e1e1;
+}
+.form-control, .btn {        
+	border-radius: 3px;
+}
+.signup-form {
+	width: 400px;
+	margin: 0 auto;
+	padding: 30px 0;		
+}
+.signup-form form {
+	color: #999;
+	border-radius: 3px;
+	margin-bottom: 15px;
+	background: #fff;
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+	padding: 30px;
+}
+.signup-form h2 {
+	color: #333;
+	font-weight: bold;
+	margin-top: 0;
+}
+.signup-form hr {
+	margin: 0 -30px 20px;
+}
+.signup-form .form-group {
+	margin-bottom: 20px;
+}
+.signup-form label {
+	font-weight: normal;
+	font-size: 15px;
+}
+.signup-form .form-control {
+	min-height: 38px;
+	box-shadow: none !important;
+}	
+.signup-form .input-group-addon {
+	max-width: 42px;
+	text-align: center;
+}	
+.signup-form .btn, .signup-form .btn:active {        
+	font-size: 16px;
+	font-weight: bold;
+	background: #19aa8d !important;
+	border: none;
+	min-width: 140px;
+}
+.signup-form .btn:hover, .signup-form .btn:focus {
+	background: #179b81 !important;
+}
+.signup-form a {
+	color: #fff;	
+	text-decoration: underline;
+}
+.signup-form a:hover {
+	text-decoration: none;
+}
+.signup-form form a {
+	color: #19aa8d;
+	text-decoration: none;
+}	
+.signup-form form a:hover {
+	text-decoration: underline;
+}
+.signup-form .fa {
+	font-size: 21px;
+}
+.signup-form .fa-paper-plane {
+	font-size: 18px;
+}
+.signup-form .fa-check {
+	color: #fff;
+	left: 17px;
+	top: 18px;
+	font-size: 7px;
+	position: absolute;
+}
+</style>
+<body style="background-image: url('https://wallpaperaccess.com/full/619974.jpg');background-size: cover; ">
+	<div class="signup-form">
+		<form action="/examples/actions/confirmation.php" method="post">
+			<h2>Sign Up</h2>
+			<p>Please fill in this form to create an account!</p>
+			<hr>
+			<div class="form-group">
+				<div class="input-group">
+					<div class="input-group-prepend">
+						<span class="input-group-text">
+							<span class="fa fa-user"></span>
+						</span>                    
+					</div>
+					<input type="text" class="form-control" name="username" placeholder="Username" required="required">
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="input-group">
+					<div class="input-group-prepend">
+						<span class="input-group-text">
+							<i class="fa fa-paper-plane"></i>
+						</span>                    
+					</div>
+					<input type="email" class="form-control" name="email" placeholder="Email Address" required="required">
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="input-group">
+					<div class="input-group-prepend">
+						<span class="input-group-text">
+							<i class="fa fa-lock"></i>
+						</span>                    
+					</div>
+					<input type="text" class="form-control" name="password" placeholder="Password" required="required">
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="input-group">
+					<div class="input-group-prepend">
+						<span class="input-group-text">
+							<i class="fa fa-lock"></i>
+							<i class="fa fa-check"></i>
+						</span>                    
+					</div>
+					<input type="text" class="form-control" name="confirm_password" placeholder="Confirm Password" required="required">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="form-check-label"><input type="checkbox" required="required"> I accept the <a href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a></label>
+			</div>
+			<div class="form-group">
+				<button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
+			</div>
+		</form>
+		<div class="text-center">Already have an account? <a href="#">Login here</a></div>
+	</div>
+<script>(function () {
+	'use strict'
+	const forms = document.querySelectorAll('.requires-validation')
+	Array.from(forms)
+	  .forEach(function (form) {
+		form.addEventListener('submit', function (event) {
+		  if (!form.checkValidity()) {
+			event.preventDefault()
+			event.stopPropagation()
+		  }
+	
+		  form.classList.add('was-validated')
+		}, false)
+	  })
+	})()
+	</script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700">
+<title>Bootstrap Sign up Form with Icons</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<style>
+
+/* html, body {
     height: 100%;
-	width:100%
 }
 
 html {
@@ -48,52 +225,167 @@ html {
 
 body {
     display: table-cell;
-    vertical-align: right;
-	padding: 10px;
+    vertical-align: middle;
 } */
 
-/* .divClass {
-  width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-} */
-h1{
-	font-size:80px;
+body {
+	color: #fff;
+	background-image: url('https://e-medjournal.com/public/journals/1/article_125_cover_en_US.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+	font-family: 'Roboto', sans-serif;
 }
-.sizeForm{
-	size:80px;
+.form-control {
+	font-size: 15px;
+}
+.form-control, .form-control:focus, .input-group-text {
+	border-color: #e1e1e1;
+}
+.form-control, .btn {        
+	border-radius: 3px;
+}
+.signup-form {
+	width: 500px;
+	margin: auto 150px;
+	padding: 70px 10px 0px 0px;		
 }
 
+h1 {
+	margin: auto 600px;
+	padding: 90px 0px 0px 0px;
+	font-weight: bolder;
+	font-size: 130px;		
+}
+.signup-form form {
+	color: #999;
+	border-radius: 10px;
+	margin-bottom: 15px;
+	background: #fff;
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+	padding: 30px;
+}
+.signup-form h2 {
+	color: #333;
+	font-weight: bold;
+	margin-top: 0;
+}
+.signup-form hr {
+	margin: 0 -30px 20px;
+}
+.signup-form .form-group {
+	margin-bottom: 20px;
+}
+.signup-form label {
+	font-weight: normal;
+	font-size: 15px;
+}
+.signup-form .form-control {
+	min-height: 38px;
+	box-shadow: none !important;
+}	
+.signup-form .input-group-addon {
+	max-width: 42px;
+	text-align: center;
+}	
+.signup-form .btn, .signup-form .btn:active {        
+	font-size: 16px;
+	font-weight: bold;
+	background: #19aa8d !important;
+	border: none;
+	min-width: 140px;
+}
+.signup-form .btn:hover, .signup-form .btn:focus {
+	background: #179b81 !important;
+}
+.signup-form a {
+	color: #fff;	
+	text-decoration: underline;
+}
+.signup-form a:hover {
+	text-decoration: none;
+}
+.signup-form form a {
+	color: #19aa8d;
+	text-decoration: none;
+}	
+.signup-form form a:hover {
+	text-decoration: underline;
+}
+.signup-form .fa {
+	font-size: 21px;
+}
+.signup-form .fa-paper-plane {
+	font-size: 18px;
+}
+.signup-form .fa-check {
+	color: #fff;
+	left: 17px;
+	top: 18px;
+	font-size: 7px;
+	position: absolute;
+}
 </style>
-<body style="background-image: url('https://wallpaperbat.com/img/176083-free-download-wallpaper-doctor-medicine-nurse-image-for-desktop.jpg');background-size: cover;">
-<div class="divClass"> 
-	<div class="col-md-4 col-md-offset-4">
-		<div>
-			<h1>Voicezan</h1>
-			<br>
-			<br>
-			<br>
-			<br>
+</head>
+<body>
+	<h1>Voicezan</h1>
+<div class="signup-form">
+    <form action="/" method="post">
+		<h2>Sign Up</h2>
+		<p>Please fill in this form to create an account!</p>
+		<hr>
+        <div class="form-group">
+			<div class="input-group">
+				<div class="input-group-prepend">
+					<span class="input-group-text">
+						<span class="fa fa-user"></span>
+					</span>                    
+				</div>
+				<input type="text" class="form-control" name="username" placeholder="Username" required="required">
+			</div>
+        </div>
+        <div class="form-group">
+			<div class="input-group">
+				<div class="input-group-prepend">
+					<span class="input-group-text">
+						<i class="fa fa-paper-plane"></i>
+					</span>                    
+				</div>
+				<input type="email" class="form-control" name="email" placeholder="Email Address" required="required">
+			</div>
+        </div>
+		<div class="form-group">
+			<div class="input-group">
+				<div class="input-group-prepend">
+					<span class="input-group-text">
+						<i class="fa fa-lock"></i>
+					</span>                    
+				</div>
+				<input type="text" class="form-control" name="password" placeholder="Password" required="required">
+			</div>
+        </div>
+		<div class="form-group">
+			<div class="input-group">
+				<div class="input-group-prepend">
+					<span class="input-group-text">
+						<i class="fa fa-lock"></i>
+						<i class="fa fa-check"></i>
+					</span>                    
+				</div>
+				<input type="text" class="form-control" name="passwordConf" placeholder="Confirm Password" required="required">
+			</div>
+        </div>
+        <div class="form-group">
+			<label class="form-check-label"><input type="checkbox" required="required"> I accept the <a href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a></label>
 		</div>
-		<div class="form-group" >
-			<form id="form1" method="post">
-				<input type="email" name="email" placeholder="E-mail" required="" class="form-control" style="height:50px;"><br/>
-				<input type="text" name="username" placeholder="Username" required="" class="form-control" style="height:50px;"><br/>
-				<input type="password" name="password" placeholder="Password" required="" class="form-control" style="height:50px;"><br/>
-				<input type="password" name="passwordConf" placeholder="Confirm Password" required="" class="form-control" style="height:50px;"><br/>
-				<input type="submit" value="Register" class="btn btn-success">
-			</form>
-		</div>
-		
-		<div class="mssg bg-danger">
-			<span id="check"></span>
-		</div>
-		<div>
-			<span>Already Registered? <a href="/login">Login</a></span>
-		</div>
+		<div class="form-group">
+            <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
+        </div>
 		<div id="LangTable"><a href="/login" id="aa"></a>
-		</div>
-	</div>
-</div> 
+    </form>
+	<div class="text-center">Already have an account? <a href="/login">Login here</a></div>
+</div>
+<script type="text/javascript">
+
+</script>
 </body>
 </html>
