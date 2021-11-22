@@ -107,11 +107,10 @@ function renderadvice(advicenotestemp) {
     if (advicenotestemp.length) {
         advicenotestemp.map(function (noteadvice) {
             htmladvice += `<li class="note">
-            <p class="header">
-            <span class="data">${noteadvice.content}</span>
-            <a href="#" id="${noteadvice.listnum} listen-note" title="Listen to Note">Listen to Note</a>
+            <p class="header" style="margin-top: 15px;">
+            <span class="data" style="font-size: 20px; margin-top: 15px; font-color: black;">${noteadvice.content}</span>
+            <a href="#" id="${noteadvice.listnum} listen-note" title="Listen to Note" style="font-size: 20px; margin-top: 15px;">Listen to Note</a>
             </p>
-            <p class="content">${noteadvice.content}</p>
         </li>`;
         })
     }

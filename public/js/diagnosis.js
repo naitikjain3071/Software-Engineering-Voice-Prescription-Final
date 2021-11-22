@@ -109,11 +109,10 @@ function renderdiagnosis(diagnosisnotestemp) {
     if (diagnosisnotestemp.length) {
         diagnosisnotestemp.map(function (notediagnosis) {
             htmldiagnosis += `<li class="note">
-            <p class="header">
-            <span class="data">${notediagnosis.content}</span>
-            <a href="#" id="${notediagnosis.listnum} listen-note" title="Listen to Note">Listen to Note</a>
+            <p class="header" style="margin-top: 15px;">
+            <span class="data" style="font-size: 20px; margin-top: 15px; font-color: black;">${notediagnosis.content}</span>
+            <a href="#" id="${notediagnosis.listnum} listen-note" title="Listen to Note" style="font-size: 20px; margin-top: 15px;">Listen to Note</a>
             </p>
-            <p class="content">${notediagnosis.content}</p>
         </li>`;
         })
     }

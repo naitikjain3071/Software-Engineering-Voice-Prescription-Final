@@ -107,11 +107,10 @@ function renderprescription(prescriptionnotestemp) {
     if (prescriptionnotestemp.length) {
         prescriptionnotestemp.map(function (noteprescription) {
             htmlprescription += `<li class="note">
-            <p class="header">
-            <span class="data">${noteprescription.content}</span>
-            <a href="#" id="${noteprescription.listnum} listen-note" title="Listen to Note">Listen to Note</a>
+            <p class="header" style="margin-top: 15px;">
+            <span class="data" style="font-size: 20px; margin-top: 15px; font-color: black;">${noteprescription.content}</span>
+            <a href="#" id="${noteprescription.listnum} listen-note" title="Listen to Note" style="font-size: 20px; margin-top: 15px;">Listen to Note</a>
             </p>
-            <p class="content">${noteprescription.content}</p>
         </li>`;
         })
     }

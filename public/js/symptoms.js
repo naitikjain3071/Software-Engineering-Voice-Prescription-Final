@@ -107,11 +107,10 @@ function rendersymptoms(symptomsnotestemp) {
     if (symptomsnotestemp.length) {
         symptomsnotestemp.map(function (notesymptoms) {
             htmlsymptoms += `<li class="note">
-            <p class="header">
-            <span class="data">${notesymptoms.content}</span>
-            <a href="#" id="${notesymptoms.listnum} listen-note" title="Listen to Note">Listen to Note</a>
+            <p class="header" style="margin-top: 15px;">
+            <span class="data" style="font-size: 20px; margin-top: 15px; font-color: black;">${notesymptoms.content}</span>
+            <a href="#" id="${notesymptoms.listnum} listen-note" title="Listen to Note" style="font-size: 20px; margin-top: 15px;">Listen to Note</a>
             </p>
-            <p class="content">${notesymptoms.content}</p>
         </li>`;
         })
     }

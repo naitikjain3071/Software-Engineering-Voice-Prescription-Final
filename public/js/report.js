@@ -87,11 +87,13 @@ function makeFinalTable() {
     for (var key in finalreport) {
         let tr = document.createElement("tr")
         tr.setAttribute("class", "row")
+        tr.style.fontSize = "20px"
         let th = document.createElement("th")
         th.setAttribute("class", "col-3")
         let td = document.createElement("td")
         td.setAttribute("class", "col")
         td.style.textAlign = "left"
+        td.style.fontSize = "20px"
         th.innerHTML = key
         td.innerHTML = finalreport[key]
         finalTableBody.appendChild(tr)

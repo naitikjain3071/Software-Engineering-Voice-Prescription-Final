@@ -104,11 +104,10 @@ function rendername(namenotestemp) {
     if (namenotestemp.length) {
         namenotestemp.map(function (notename) {
             htmlname += `<li class="note">
-            <p class="header">
-            <span class="data">${notename.content}</span>
-            <a href="#" id="${notename.listnum} listen-note" title="Listen to Note">Listen to Note</a>
+            <p class="header" style="margin-top: 15px;">
+            <span class="data" style="font-size: 20px; margin-top: 15px; font-color: black;">${notename.content}</span>
+            <a href="#" id="${notename.listnum} listen-note" title="Listen to Note" style="font-size: 20px; margin-top: 15px;">Listen to Note</a>
             </p>
-            <p class="content">${notename.content}</p>
         </li>`;
         })
     }
