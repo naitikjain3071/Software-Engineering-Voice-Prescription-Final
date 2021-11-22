@@ -11,7 +11,7 @@ const emailer = require("./utilities/email");
 
 //Yashvi - mongodb+srv://admin:admin@cluster0.kjhke.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
 //Naitik - mongodb+srv://admin:admin@cluster0.aikfq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
-mongoose.connect('mongodb+srv://admin:admin@cluster0.aikfq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
+mongoose.connect('mongodb+srv://admin:admin@cluster0.icr3v.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 }, (err) => {

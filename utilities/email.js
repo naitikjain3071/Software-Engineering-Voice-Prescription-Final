@@ -6,18 +6,18 @@ module.exports = async function (options) {
         service: "gmail",
         //host: "smtp.gmail.com",
         auth: {
-            user: "naitik.jain@spit.ac.in",
+            user: "yashvi.mehta@spit.ac.in",
             pass: ""
         }
     });
     let mailDetails = {
-        from: "naitik.jain@spit.ac.in",
+        from: "yashvi.mehta@spit.ac.in",
         to: options.recieversEmailId,
         subject: options.subject,
         attachments: [{
             filename: 'report.pdf',
-            //path: '/Users/yashvimehta/Downloads/report.pdf',
-            path: '/Users/91976/Downloads/report.pdf',
+            path: '/Users/yashvimehta/Downloads/report.pdf',
+            //path: '/Users/91976/Downloads/report.pdf',
             contentType: 'application/pdf'
           }],
     };
