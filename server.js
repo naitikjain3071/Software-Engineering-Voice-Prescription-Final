@@ -48,6 +48,7 @@ app.use(express.static(__dirname + '/views'));
 var index = require('./routes/index');
 app.use('/', index);
 
+<<<<<<< HEAD
 class EmailController{
   constructor() {}
   async emailPdf(req, res) {
@@ -67,6 +68,20 @@ class EmailController{
     } catch (err) {
       console.log(err);
       res.json({ err });
+=======
+app.post("/email", async function(req, res) {
+  try {
+    if (req.body) {
+      await emailer(req.body);
+      console.log("Email is send");
+      res.json({
+        result: "email send "
+      });
+    } else {
+      res.json({
+        result: "enter data of patient"
+      });
+>>>>>>> parent of ee85031 (final changes 1)
     }
   }
 }

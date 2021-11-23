@@ -65,7 +65,6 @@ symptomstextarea.addEventListener("input", function () {
 })
 
 symptomssave.addEventListener("click", function () {
-    console.log("uuuuu");
     symptomsrecognition.stop();
     if (!symptomscontent.length) {
         symptomsinstructions.innerHTML = "Could not save empty note. Please add a message to your note.";
@@ -73,7 +72,6 @@ symptomssave.addEventListener("click", function () {
     else {
         savesymptoms(symptomscontent);
         symptomscontent = "";
-        console.log("uuuuu");
         //renderNotes
         rendersymptoms(getAllsymptoms());
         symptomstextarea.textContent = "";
@@ -110,7 +108,6 @@ function readOutLoudsymptoms(message) {
 //Helper Functions
 function rendersymptoms(symptomsnotestemp) {
     var htmlsymptoms = "";
-    console.log("yashvi");
     if (symptomsnotestemp.length) {
         symptomsnotestemp.map(function (notesymptoms) {
             htmlsymptoms += `<li class="note">

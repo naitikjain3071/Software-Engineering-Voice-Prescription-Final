@@ -6,7 +6,6 @@ async function sendEmail(html, email) {
   };
   try {
     const result = await axios.post("/email", options);
-    console.log("SOMEEEE");
     if (result.data.result) {
       alert("Email Send to Patient");
     }
