@@ -3,6 +3,7 @@ var router = express.Router();
 var User = require('../models/user');
 //var popup = require('popups');
 //import swal from 'sweetalert';
+var username="";
 
 
 class AuthController{
@@ -57,6 +58,7 @@ class AuthController{
 				if(data.password==req.body.password){
 					req.session.userId = data.unique_id;
 					//console.log(req.session.userId);
+					username=req.body.username;
 					res.redirect('/prescription');
 				}else{
 					res.send({"Success":"Incorrect password"});
@@ -121,8 +123,15 @@ class AuthController{
 		});
 	}
 	instructions(req, res, next){
-		console.log("pp");
-		res.render("instructions.ejs")
+		res.render("instructions.ejs",{"name":username});
+		// User.findOne({email:req.body.email},function(err,data){
+		// 	console.log(data);
+		// 	if(!data){
+		// 		res.send({"Success":"This Email Is not regestered!"});
+		// 	}else{
+		// 		res.render("instructions.ejs",{"name":username});
+		// 	}
+		// });
 	}
 }
 

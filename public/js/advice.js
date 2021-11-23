@@ -16,6 +16,14 @@ const advicenotes = document.querySelector("#notes-advice")
 let advicecontent = "";
 let advicecontentstorage = [];
 
+// document.getElementById('advice-textarea').onkeyup = function(event) {
+//     if (this.value.length === 0) {
+//         advicecontent = "";
+//         advicecontentstorage = [];
+//       // variable resetting here
+//     }
+//   }
+
 //Voice Recognition
 advicerecognition.continuous = true;
 
@@ -106,6 +114,7 @@ function renderadvice(advicenotestemp) {
             <span class="data" style="font-size: 20px; margin-top: 15px; font-color: black;">${noteadvice.content}</span>
             <a href="#" id="${noteadvice.listnum} listen-note" title="   listen to note" style="font-size: 20px; margin-top: 15px; color:black">Listen to Note</a>
             </p>
+            <p class="content">${noteadvice.content}</p>
         </li>`;
         })
     }

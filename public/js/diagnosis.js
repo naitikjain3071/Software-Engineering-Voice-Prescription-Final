@@ -16,6 +16,14 @@ const diagnosisnotes = document.querySelector("#notes-diagnosis")
 let diagnosiscontent = "";
 let diagnosiscontentstorage = [];
 
+// document.getElementById('diagnosis-textarea').onkeyup = function(event) {
+//     if (this.value.length === 0) {
+//         diagnosiscontent = "";
+//         diagnosiscontentstorage = [];
+//       // variable resetting here
+//     }
+//   }
+
 //Voice Recognition
 diagnosisrecognition.continuous = true;
 
@@ -105,6 +113,7 @@ function renderdiagnosis(diagnosisnotestemp) {
             <span class="data" style="font-size: 20px; margin-top: 15px; font-color: black;">${notediagnosis.content}</span>
             <a href="#" id="${notediagnosis.listnum} listen-note" title="Listen to Note" style="font-size: 20px; margin-top: 15px;">Listen to Note</a>
             </p>
+            <p class="content">${notediagnosis.content}</p>
         </li>`;
         })
     }

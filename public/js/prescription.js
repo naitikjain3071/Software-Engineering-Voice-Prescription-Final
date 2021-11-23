@@ -16,6 +16,14 @@ const prescriptionnotes = document.querySelector("#notes-prescription")
 let prescriptioncontent = "";
 let prescriptioncontentstorage = [];
 
+// document.getElementById('prescription-textarea').onkeyup = function(event) {
+//     if (this.value.length === 0) {
+//         prescriptioncontent = "";
+//         prescriptioncontentstorage = [];
+//       // variable resetting here
+//     }
+//   }
+
 //Voice Recognition
 prescriptionrecognition.continuous = true;
 
@@ -106,6 +114,7 @@ function renderprescription(prescriptionnotestemp) {
             <span class="data" style="font-size: 20px; margin-top: 15px; font-color: black;">${noteprescription.content}</span>
             <a href="#" id="${noteprescription.listnum} listen-note" title="Listen to Note" style="font-size: 20px; margin-top: 15px;">Listen to Note</a>
             </p>
+            <p class="content">${noteprescription.content}</p>
         </li>`;
         })
     }

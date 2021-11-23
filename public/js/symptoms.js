@@ -16,6 +16,15 @@ const symptomsnotes = document.querySelector("#notes-symptoms")
 let symptomscontent = "";
 let symptomscontentstorage = [];
 
+
+// document.getElementById('symptoms-textarea').onkeyup = function(event) {
+//     if (this.value.length === 0) {
+//         symptomscontent = "";
+//         symptomscontentstorage = [];
+//       // variable resetting here
+//     }
+//   }
+
 //Voice Recognition
 symptomsrecognition.continuous = true;
 
@@ -109,6 +118,7 @@ function rendersymptoms(symptomsnotestemp) {
             <span class="data" style="font-size: 20px; margin-top: 15px; font-color: black;">${notesymptoms.content}</span>
             <a href="#" id="${notesymptoms.listnum} listen-note" title="Listen to Note" style="font-size: 20px; margin-top: 15px;">Listen to Note</a>
             </p>
+            <p class="content">${notesymptoms.content}</p>
         </li>`;
         })
     }
