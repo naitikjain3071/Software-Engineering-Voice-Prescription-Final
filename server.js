@@ -48,25 +48,50 @@ app.use(express.static(__dirname + '/views'));
 var index = require('./routes/index');
 app.use('/', index);
 
-app.post("/email", async function(req, res) {
-  console.log("helloo");
-  try {
-    if (req.body) {
-      await emailer(req.body);
-      console.log("Email is send");
-      res.json({
-        result: "email send "
-      });
-    } else {
-      res.json({
-        result: "enter data of patient"
-      });
+class AuthController1{
+  constructor() {}
+  async emailPdf(req, res) {
+    console.log("helloo");
+    try {
+      if (req.body) {
+        await emailer(req.body);
+        console.log("Email is send");
+        res.json({
+          result: "email send "
+        });
+      } else {
+        res.json({
+          result: "enter data of patient"
+        });
+      }
+    } catch (err) {
+      console.log(err);
+      res.json({ err });
     }
-  } catch (err) {
-    console.log(err);
-    res.json({ err });
   }
-});
+}
+
+const AuthCtrl1 = new AuthController1();
+app.post('/email', AuthCtrl1.emailPdf);
+// app.post("/email", async function(req, res) {
+//   console.log("helloo");
+//   try {
+//     if (req.body) {
+//       await emailer(req.body);
+//       console.log("Email is send");
+//       res.json({
+//         result: "email send "
+//       });
+//     } else {
+//       res.json({
+//         result: "enter data of patient"
+//       });
+//     }
+//   } catch (err) {
+//     console.log(err);
+//     res.json({ err });
+//   }
+// });
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
