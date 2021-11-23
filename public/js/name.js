@@ -1,3 +1,4 @@
+
 try {
     var SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition; //to check if browser supports SpeechRecognition class
     var namerecognition = new SpeechRecognition(); //create an object 
@@ -7,6 +8,7 @@ catch (e) {
     $('.no-browser-support').show();
     $('.app').hide();
 }
+// var express = require('express');
 const nametextarea = document.querySelector("#name-textarea")
 const namestart = document.querySelector("#start-record-btn-name")
 const namepause = document.querySelector("#pause-record-btn-name")
@@ -16,11 +18,11 @@ const namenotes = document.querySelector("#notes-name")
 let namecontent = "";
 let namecontentstorage = [];
 
-// document.getElementById('name-textarea').onkeyup = function(event) {
-//     if (this.value.length === 0) {
-//         namerecognition.start();
-//     }
-//   }
+nametextarea.onkeyup = function(event) {
+    if (this.value.length === 0) {
+        nametextarea.placeholder = " Enter a new name by typing or using voice recognition.";
+    }
+  }
 
 //Voice Recognition
 namerecognition.continuous = true; //to listen continuously 
@@ -30,8 +32,9 @@ namerecognition.onresult = function (event) {
     let currentname = event.resultIndex;
     let transcriptname = event.results[currentname][0].transcript;
     namecontent += transcriptname;
-    nametextarea.textContent = namecontent;
+    nametextarea.value = namecontent;
     console.log(namecontent);
+    console.log(nametextarea.textContent);
 }
 
 namerecognition.onstart = function () {
@@ -53,6 +56,7 @@ namestart.addEventListener("click", function () {
     if (namecontent.length) {
         namecontent += " ";
     }
+    namecontent += " ";
     namerecognition.start()
 })
 namepause.addEventListener("click", function () {

@@ -48,7 +48,7 @@ app.use(express.static(__dirname + '/views'));
 var index = require('./routes/index');
 app.use('/', index);
 
-class AuthController1{
+class EmailController{
   constructor() {}
   async emailPdf(req, res) {
     console.log("helloo");
@@ -71,8 +71,8 @@ class AuthController1{
   }
 }
 
-const AuthCtrl1 = new AuthController1();
-app.post('/email', AuthCtrl1.emailPdf);
+const Email = new EmailController();
+app.post('/email', Email.emailPdf);
 // app.post("/email", async function(req, res) {
 //   console.log("helloo");
 //   try {

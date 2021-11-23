@@ -17,13 +17,13 @@ let symptomscontent = "";
 let symptomscontentstorage = [];
 
 
-// document.getElementById('symptoms-textarea').onkeyup = function(event) {
-//     if (this.value.length === 0) {
-//         symptomscontent = "";
-//         symptomscontentstorage = [];
-//       // variable resetting here
-//     }
-//   }
+
+symptomstextarea.onkeyup = function(event) {
+    if (this.value.length === 0) {
+        symptomstextarea.placeholder = " Enter symptoms by typing or using voice recognition.";
+    }
+  }
+
 
 //Voice Recognition
 symptomsrecognition.continuous = true;
@@ -32,7 +32,7 @@ symptomsrecognition.onresult = function (event) {
     let currentsymptoms = event.resultIndex;
     let transcriptsymptoms = event.results[currentsymptoms][0].transcript;
     symptomscontent += transcriptsymptoms;
-    symptomstextarea.textContent = symptomscontent;
+    symptomstextarea.value = symptomscontent;
 }
 symptomsrecognition.onstart = function () {
     symptomsinstructions.innerHTML = "Voice recognition activated. Try speaking into the microphone.";

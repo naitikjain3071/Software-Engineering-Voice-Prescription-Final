@@ -16,14 +16,11 @@ const advicenotes = document.querySelector("#notes-advice")
 let advicecontent = "";
 let advicecontentstorage = [];
 
-// document.getElementById('advice-textarea').onkeyup = function(event) {
-//     if (this.value.length === 0) {
-//         advicecontent = "";
-//         advicecontentstorage = [];
-//       // variable resetting here
-//     }
-//   }
-
+advicetextarea.onkeyup = function(event) {
+    if (this.value.length === 0) {
+        advicetextarea.placeholder = " Enter advice by typing or using voice recognition.";
+    }
+  }
 //Voice Recognition
 advicerecognition.continuous = true;
 
@@ -31,7 +28,7 @@ advicerecognition.onresult = function (event) {
     let currentadvice = event.resultIndex;
     let transcriptadvice = event.results[currentadvice][0].transcript;
     advicecontent += transcriptadvice;
-    advicetextarea.textContent = advicecontent;
+    advicetextarea.value = advicecontent;
 }
 advicerecognition.onstart = function () {
     adviceinstructions.innerHTML = "Voice recognition activated. Try speaking into the microphone.";

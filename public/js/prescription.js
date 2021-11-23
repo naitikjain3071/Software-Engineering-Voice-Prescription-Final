@@ -16,13 +16,12 @@ const prescriptionnotes = document.querySelector("#notes-prescription")
 let prescriptioncontent = "";
 let prescriptioncontentstorage = [];
 
-// document.getElementById('prescription-textarea').onkeyup = function(event) {
-//     if (this.value.length === 0) {
-//         prescriptioncontent = "";
-//         prescriptioncontentstorage = [];
-//       // variable resetting here
-//     }
-//   }
+prescriptiontextarea.onkeyup = function(event) {
+    if (this.value.length === 0) {
+        prescriptiontextarea.placeholder = " Enter prescription by typing or using voice recognition.";
+    }
+  }
+
 
 //Voice Recognition
 prescriptionrecognition.continuous = true;
@@ -31,7 +30,7 @@ prescriptionrecognition.onresult = function (event) {
     let currentprescription = event.resultIndex;
     let transcriptprescription = event.results[currentprescription][0].transcript;
     prescriptioncontent += transcriptprescription;
-    prescriptiontextarea.textContent = prescriptioncontent;
+    prescriptiontextarea.value = prescriptioncontent;
 }
 prescriptionrecognition.onstart = function () {
     prescriptioninstructions.innerHTML = "Voice recognition activated. Try speaking into the microphone.";

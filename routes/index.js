@@ -42,7 +42,7 @@ class AuthController{
 									console.log('Success');
 							});
 						}).sort({_id: -1}).limit(1);
-						res.render("/prescription");
+						res.redirect("/");
 					}else{
 						res.send({"Success":"Email is already used."});
 					}

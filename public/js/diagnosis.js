@@ -16,13 +16,11 @@ const diagnosisnotes = document.querySelector("#notes-diagnosis")
 let diagnosiscontent = "";
 let diagnosiscontentstorage = [];
 
-// document.getElementById('diagnosis-textarea').onkeyup = function(event) {
-//     if (this.value.length === 0) {
-//         diagnosiscontent = "";
-//         diagnosiscontentstorage = [];
-//       // variable resetting here
-//     }
-//   }
+diagnosistextarea.onkeyup = function(event) {
+    if (this.value.length === 0) {
+        diagnosistextarea.placeholder = " Enter diagnosis by typing or using voice recognition.";
+    }
+  }
 
 //Voice Recognition
 diagnosisrecognition.continuous = true;
@@ -31,7 +29,7 @@ diagnosisrecognition.onresult = function (event) {
     let currentdiagnosis = event.resultIndex;
     let transcriptdiagnosis = event.results[currentdiagnosis][0].transcript;
     diagnosiscontent += transcriptdiagnosis;
-    diagnosistextarea.textContent = diagnosiscontent;
+    diagnosistextarea.value = diagnosiscontent;
 }
 diagnosisrecognition.onstart = function () {
     diagnosisinstructions.innerHTML = "Voice recognition activated. Try speaking into the microphone.";
