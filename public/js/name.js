@@ -1,6 +1,6 @@
 try {
-    var SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-    var namerecognition = new SpeechRecognition();
+    var SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition; //to check if browser supports SpeechRecognition class
+    var namerecognition = new SpeechRecognition(); //create an object 
 }
 catch (e) {
     console.error(e);
@@ -17,14 +17,8 @@ let namecontent = "";
 let namecontentstorage = [];
 
 //Voice Recognition
-namerecognition.continuous = true;
+namerecognition.continuous = true; //to listen continuously 
 
-namerecognition.onresult = function (event) {
-    let currentname = event.resultIndex;
-    let transcriptname = event.results[currentname][0].transcript;
-    namecontent += transcriptname;
-    nametextarea.textContent = namecontent;
-}
 namerecognition.onstart = function () {
     nameinstructions.innerHTML = "Voice recognition activated. Try speaking into the microphone.";
 }
@@ -38,6 +32,15 @@ namerecognition.onerror = function (event) {
     if (event.error == 'no-speech') {
         nameinstructions.innerHTML = "No speech was detected. Try again.";
     }
+}
+
+namerecognition.onresult = function (event) {
+    console.log("YUUUUUUu");
+    let currentname = event.resultIndex;
+    let transcriptname = event.results[currentname][0].transcript;
+    namecontent += transcriptname;
+    nametextarea.textContent = namecontent;
+    console.log(namecontent);
 }
 
 //App buttons and input
